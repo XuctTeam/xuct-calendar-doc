@@ -14,4 +14,4 @@ create table oauth_client_details
     autoapprove             varchar(256)  null comment ' ''true'',''false'', ''read'',''write'''
 );
 
-INSERT INTO oauth.oauth_client_details (client_id, resource_ids, client_secret, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove) VALUES ('app_id', null, '$2a$10$XzynJiuIo6FIpUIRxGvmSu.AV4Pjq4lrtdPd3MXx.wNT12QA8SxEq', 'all', 'phone,password,wechat,refresh_token', null, null, null, null, null, null);
+INSERT INTO oauth_client_details (client_id, resource_ids, client_secret, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove) VALUES ('app_id', null, '$2a$10$XzynJiuIo6FIpUIRxGvmSu.AV4Pjq4lrtdPd3MXx.wNT12QA8SxEq', 'all', 'phone,password,wechat,refresh_token', null, null, null, null, null, null);
