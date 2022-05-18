@@ -327,6 +327,46 @@ store_path0=/home/fdfs/storage
 ```
 
 ```
+user_backgroud : group1/M00/00/00/CgAQDGKEij2ATKyTAAIAU7l2Pcg600.png
 
+login_backgroupd : group1/M00/00/00/CgAQDGKDVWeASm9XAACEf3Qy6sE436
+
+login_bottom: 
+```
+
+### 六、部署应用服务器
+
+#### 1.安装docker
+
+```
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates software-properties-common curl
+# 添加 GPG 密钥，并添加 Docker-ce 软件源
+官方的软件源（不推荐，很慢）：
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg|sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+中国科技大学的 Docker-ce 源（其他源类似）：
+curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \
+$(lsb_release -cs) stable"
+# 注意：添加错了可以用以下命令删除
+# 查询keyid,下图
+sudo apt-key list
+# keyid 就是90那一串
+sudo apt-key del <keyid>
+# 加参数-r可以移除
+sudo add-apt-repository -r "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+# 更新软件包缓存
+sudo apt-get update
+# 安装 Docker-ce
+sudo apt-get install docker-ce
+# 启动Docker服务
+sudo service docker start
+```
+
+#### 2. 配置网络
+
+```
+    docker network create dav-cal-network
 ```
 
